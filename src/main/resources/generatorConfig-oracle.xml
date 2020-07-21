@@ -7,12 +7,34 @@
     <context id="MysqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
-        <!--修改Example文件名-->
-        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
-            <property name="searchString" value="Example$"/>
-            <property name="replaceString" value="Condition"/>
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!--修改Mapper文件名-->
+        <plugin type="org.mybatis.generator.plugins.rename.RenameJavaMapperPlugin">
+            <property name="searchString" value="Mapper$" />
+            <property name="replaceString" value="Dao" />
+        </plugin>
+        <!--修改xml文件名-->
+        <plugin type="org.mybatis.generator.plugins.rename.RenameSqlMapperPlugin">
+            <property name="searchString" value="Mapper" />
+            <property name="replaceString" value="Dao" />
         </plugin>
 
+        <!--        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">-->
+        <!--            <property name="searchString" value="Example$" />-->
+        <!--            <property name="replaceString" value="Search" />-->
+        <!--        </plugin>-->
+
+        <!-- 为模型生成序列化方法-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!-- 为生成的Java模型创建一个toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+        <commentGenerator type="custom.CommentGenerator">
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
 
         <!--数据库链接地址账号密码-->
         <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
@@ -32,6 +54,6 @@
                              type="XMLMAPPER"/>
 
         <!-- 配置 数据库逆向生成配置的表-->
-        <table tableName="SYS_CODE_MANAGER" />
+        <table tableName="%" />
     </context>
 </generatorConfiguration>
