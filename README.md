@@ -13,3 +13,5 @@ MybatisGenerator自动生成代码工具，此项目包含了，SqlServer配置�
 ④为model生成toString方法
 
 ⑤去除自动生成的注释
+
+⑥为实体类添加
