@@ -1,9 +1,6 @@
 package org.mybatis.generator.plugins.rename;
 
 
-import static org.mybatis.generator.internal.util.StringUtility.stringHasValue;
-import static org.mybatis.generator.internal.util.messages.Messages.getString;
-
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -13,6 +10,10 @@ import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.internal.util.StringUtility;
 import org.mybatis.generator.internal.util.messages.Messages;
 
+/**
+ * 自定义java mapper类名后缀
+ * @author zhuxiaofeng
+ */
 public class RenameJavaMapperPlugin extends PluginAdapter {
     private String searchString;
     private String replaceString;
