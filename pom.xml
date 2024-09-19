@@ -22,7 +22,7 @@
     </build>
     <properties>
         <java.version>1.8</java.version>
-        <swagger2.version>2.9.2</swagger2.version>
+        <swagger2.version>2.10.0</swagger2.version>
         <swagger-models.version>1.6.0</swagger-models.version>
         <swagger-annotations.version>1.6.0</swagger-annotations.version>
         <lombok.versin>1.18.12</lombok.versin>
